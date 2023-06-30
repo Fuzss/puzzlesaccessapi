@@ -16,40 +16,18 @@ public abstract class ExtendableContainerScreen<T extends AbstractContainerMenu>
     }
 
     @Override
-    protected final void renderFloatingItem(GuiGraphics guiGraphics, ItemStack itemStack, int i, int j, String string) {
-        this._renderFloatingItem(guiGraphics, itemStack, i, j, string);
-    }
-
-    protected void _renderFloatingItem(GuiGraphics guiGraphics, ItemStack itemStack, int i, int j, String string) {
+    protected void renderFloatingItem(GuiGraphics guiGraphics, ItemStack itemStack, int i, int j, String string) {
         super.renderFloatingItem(guiGraphics, itemStack, i, j, string);
     }
 
     @Override
-    protected final void renderSlot(GuiGraphics guiGraphics, Slot slot) {
-        this._renderSlot(guiGraphics, slot);
-    }
-
-    protected void _renderSlot(GuiGraphics guiGraphics, Slot slot) {
+    protected void renderSlot(GuiGraphics guiGraphics, Slot slot) {
         super.renderSlot(guiGraphics, slot);
     }
 
-    @Override
-    protected final void recalculateQuickCraftRemaining() {
-        this._recalculateQuickCraftRemaining();
-    }
-
-    protected void _recalculateQuickCraftRemaining() {
-        super.recalculateQuickCraftRemaining();
-    }
-
     @Nullable
     @Override
-    protected final Slot findSlot(double mouseX, double mouseY) {
-        return this._findSlot(mouseX, mouseY);
-    }
-
-    @Nullable
-    protected Slot _findSlot(double mouseX, double mouseY) {
+    protected Slot findSlot(double mouseX, double mouseY) {
         return super.findSlot(mouseX, mouseY);
     }
 

@@ -14,20 +14,12 @@ public abstract class ExtendableContainerMenu extends AbstractContainerMenu {
     }
 
     @Override
-    protected final void doClick(int slotId, int button, ClickType clickType, Player player) {
-        this._doClick(slotId, button, clickType, player);
-    }
-
-    protected void _doClick(int slotId, int button, ClickType clickType, Player player) {
+    protected void doClick(int slotId, int button, ClickType clickType, Player player) {
         super.doClick(slotId, button, clickType, player);
     }
 
     @Override
-    protected final boolean tryItemClickBehaviourOverride(Player player, ClickAction action, Slot slot, ItemStack clickedItem, ItemStack carriedItem) {
-        return this._tryItemClickBehaviourOverride(player, action, slot, clickedItem, carriedItem);
-    }
-
-    protected boolean _tryItemClickBehaviourOverride(Player player, ClickAction action, Slot slot, ItemStack clickedItem, ItemStack carriedItem) {
+    protected boolean tryItemClickBehaviourOverride(Player player, ClickAction action, Slot slot, ItemStack clickedItem, ItemStack carriedItem) {
         return super.tryItemClickBehaviourOverride(player, action, slot, clickedItem, carriedItem);
     }
 
