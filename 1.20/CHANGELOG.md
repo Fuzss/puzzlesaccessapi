@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog].
 
+## [v8.0.6-1.20.1] - 2023-09-28
+### Added
+- Added access to `BlockModelGenerators` and `ItemModelGenerators` for using them as builders
+
 ## [v8.0.5-1.20.1] - 2023-06-30
 ### Changed
 - Final cleanup
