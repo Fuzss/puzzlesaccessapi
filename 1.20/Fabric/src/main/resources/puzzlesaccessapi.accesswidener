@@ -1,5 +1,4 @@
 accessWidener	v2	named
-
 accessible  field   net/minecraft/world/inventory/AbstractContainerMenu quickcraftType  I
 accessible  field   net/minecraft/world/inventory/AbstractContainerMenu quickcraftStatus    I
 accessible  field   net/minecraft/world/inventory/AbstractContainerMenu quickcraftSlots Ljava/util/Set;
@@ -33,7 +32,11 @@ extendable  class   net/minecraft/data/models/BlockModelGenerators$BlockEntityMo
 extendable  class   net/minecraft/data/models/BlockModelGenerators$BlockFamilyProvider
 extendable  class   net/minecraft/data/models/BlockModelGenerators$TintState
 extendable  class   net/minecraft/data/models/BlockModelGenerators$WoodProvider
+accessible  field   net/minecraft/data/models/BlockModelGenerators  blockStateOutput    Ljava/util/function/Consumer;
+accessible  field   net/minecraft/data/models/BlockModelGenerators  modelOutput Ljava/util/function/BiConsumer;
+accessible  field   net/minecraft/data/models/BlockModelGenerators  skippedAutoModelsOutput Ljava/util/function/Consumer;
 accessible  field   net/minecraft/data/models/BlockModelGenerators  texturedModels  Ljava/util/Map;
+mutable     field   net/minecraft/data/models/BlockModelGenerators  texturedModels  Ljava/util/Map;
 extendable	method	net/minecraft/data/models/BlockModelGenerators	createMirroredCubeGenerator	(Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/data/models/model/TextureMapping;Ljava/util/function/BiConsumer;)Lnet/minecraft/data/models/blockstates/BlockStateGenerator;
 extendable	method	net/minecraft/data/models/BlockModelGenerators	createNorthWestMirroredCubeGenerator	(Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/data/models/model/TextureMapping;Ljava/util/function/BiConsumer;)Lnet/minecraft/data/models/blockstates/BlockStateGenerator;
 extendable	method	net/minecraft/data/models/BlockModelGenerators	createMirroredColumnGenerator	(Lnet/minecraft/world/level/block/Block;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/data/models/model/TextureMapping;Ljava/util/function/BiConsumer;)Lnet/minecraft/data/models/blockstates/BlockStateGenerator;
@@ -146,6 +149,7 @@ extendable	method	net/minecraft/data/models/BlockModelGenerators	createBedItem	(
 extendable	method	net/minecraft/data/models/BlockModelGenerators	createNetherRoots	(Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
 extendable	method	net/minecraft/data/models/BlockModelGenerators	applyRotation	(Lnet/minecraft/core/FrontAndTop;Lnet/minecraft/data/models/blockstates/Variant;)Lnet/minecraft/data/models/blockstates/Variant;
 extendable	method	net/minecraft/data/models/BlockModelGenerators	createCandleAndCandleCake	(Lnet/minecraft/world/level/block/Block;Lnet/minecraft/world/level/block/Block;)V
+accessible  field   net/minecraft/data/models/ItemModelGenerators   output  Ljava/util/function/BiConsumer;
 extendable	method	net/minecraft/data/models/ItemModelGenerators	generateFlatItem	(Lnet/minecraft/world/item/Item;Lnet/minecraft/data/models/model/ModelTemplate;)V
 extendable	method	net/minecraft/data/models/ItemModelGenerators	generateFlatItem	(Lnet/minecraft/world/item/Item;Ljava/lang/String;Lnet/minecraft/data/models/model/ModelTemplate;)V
 extendable	method	net/minecraft/data/models/ItemModelGenerators	generateFlatItem	(Lnet/minecraft/world/item/Item;Lnet/minecraft/world/item/Item;Lnet/minecraft/data/models/model/ModelTemplate;)V

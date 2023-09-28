@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog].
 
+## [v8.0.7-1.20.1] - 2023-09-28
+### Changed
+- `BlockModelGenerators` and `ItemModelGenerators` accesses now include access to fields
+### Fixed
+- Fixed `BlockModelGenerators` extensions crashing on Forge
+
 ## [v8.0.6-1.20.1] - 2023-09-28
 ### Added
 - Added access to `BlockModelGenerators` and `ItemModelGenerators` for using them as builders

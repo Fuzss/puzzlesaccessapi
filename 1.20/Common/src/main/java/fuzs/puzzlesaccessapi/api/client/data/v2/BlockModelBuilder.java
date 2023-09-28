@@ -13,13 +13,33 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.function.*;
-import java.util.stream.Collectors;
 
 public class BlockModelBuilder extends BlockModelGenerators {
-    
+
     public BlockModelBuilder(Consumer<BlockStateGenerator> blockStateOutput, BiConsumer<ResourceLocation, Supplier<JsonElement>> modelOutput, Consumer<Item> skippedAutoModelsOutput) {
         super(blockStateOutput, modelOutput, skippedAutoModelsOutput);
+    }
+
+    public Consumer<BlockStateGenerator> getBlockStateOutput() {
+        return this.blockStateOutput;
+    }
+
+    public BiConsumer<ResourceLocation, Supplier<JsonElement>> getModelOutput() {
+        return this.modelOutput;
+    }
+
+    public Consumer<Item> getSkippedAutoModelsOutput() {
+        return this.skippedAutoModelsOutput;
+    }
+
+    public Map<Block, TexturedModel> getTexturedModels() {
+        return this.texturedModels;
+    }
+
+    public void setTexturedModels(Map<Block, TexturedModel> texturedModels) {
+        this.texturedModels = texturedModels;
     }
 
     public static BlockStateGenerator createMirroredCubeGenerator(Block cubeBlock, ResourceLocation location, TextureMapping textureMapping, BiConsumer<ResourceLocation, Supplier<JsonElement>> modelOutput) {

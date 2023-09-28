@@ -20,6 +20,10 @@ public class ItemModelBuilder extends ItemModelGenerators {
         super(output);
     }
 
+    public BiConsumer<ResourceLocation, Supplier<JsonElement>> getOutput() {
+        return this.output;
+    }
+
     @Override
     public void generateFlatItem(Item item, ModelTemplate modelTemplate) {
         super.generateFlatItem(item, modelTemplate);
