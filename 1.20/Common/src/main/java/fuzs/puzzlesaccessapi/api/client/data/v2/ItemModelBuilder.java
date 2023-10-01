@@ -14,9 +14,9 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
-public class ExtendableItemModelGenerators extends ItemModelGenerators {
+public class ItemModelBuilder extends ItemModelGenerators {
 
-    public ExtendableItemModelGenerators(BiConsumer<ResourceLocation, Supplier<JsonElement>> output) {
+    public ItemModelBuilder(BiConsumer<ResourceLocation, Supplier<JsonElement>> output) {
         super(output);
     }
 
