@@ -6,7 +6,10 @@ import net.minecraft.core.FrontAndTop;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.blockstates.*;
-import net.minecraft.data.models.model.*;
+import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.data.models.model.ModelTemplate;
+import net.minecraft.data.models.model.TextureMapping;
+import net.minecraft.data.models.model.TexturedModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -16,9 +19,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.*;
 
-public class BlockModelBuilder extends BlockModelGenerators {
+public class ExtendableBlockModelGenerators extends BlockModelGenerators {
 
-    public BlockModelBuilder(Consumer<BlockStateGenerator> blockStateOutput, BiConsumer<ResourceLocation, Supplier<JsonElement>> modelOutput, Consumer<Item> skippedAutoModelsOutput) {
+    public ExtendableBlockModelGenerators(Consumer<BlockStateGenerator> blockStateOutput, BiConsumer<ResourceLocation, Supplier<JsonElement>> modelOutput, Consumer<Item> skippedAutoModelsOutput) {
         super(blockStateOutput, modelOutput, skippedAutoModelsOutput);
     }
 
@@ -47,13 +50,11 @@ public class BlockModelBuilder extends BlockModelGenerators {
     }
 
     public static BlockStateGenerator createNorthWestMirroredCubeGenerator(Block cubeBlock, ResourceLocation location, TextureMapping textureMapping, BiConsumer<ResourceLocation, Supplier<JsonElement>> modelOutput) {
-        ResourceLocation resourceLocation = ModelTemplates.CUBE_NORTH_WEST_MIRRORED_ALL.create(cubeBlock, textureMapping, modelOutput);
-        return createSimpleBlock(cubeBlock, resourceLocation);
+        return BlockModelGenerators.createNorthWestMirroredCubeGenerator(cubeBlock, location, textureMapping, modelOutput);
     }
 
     public static BlockStateGenerator createMirroredColumnGenerator(Block columnBlock, ResourceLocation location, TextureMapping textureMapping, BiConsumer<ResourceLocation, Supplier<JsonElement>> modelOutput) {
-        ResourceLocation resourceLocation = ModelTemplates.CUBE_COLUMN_MIRRORED.create(columnBlock, textureMapping, modelOutput);
-        return createRotatedVariant(columnBlock, location, resourceLocation).with(createRotatedPillar());
+        return BlockModelGenerators.createMirroredColumnGenerator(columnBlock, location, textureMapping, modelOutput);
     }
 
     @Override
@@ -572,7 +573,7 @@ public class BlockModelBuilder extends BlockModelGenerators {
         throw new UnsupportedOperationException();
     }
 
-    public final class BlockEntityModelGenerator extends BlockModelGenerators.BlockEntityModelGenerator {
+    public class BlockEntityModelGenerator extends BlockModelGenerators.BlockEntityModelGenerator {
 
         public BlockEntityModelGenerator(ResourceLocation baseModel, Block particleBlock) {
             super(baseModel, particleBlock);
@@ -597,7 +598,7 @@ public class BlockModelBuilder extends BlockModelGenerators {
         }
     }
 
-    public final class BlockFamilyProvider extends BlockModelGenerators.BlockFamilyProvider {
+    public class BlockFamilyProvider extends BlockModelGenerators.BlockFamilyProvider {
 
         public BlockFamilyProvider(TextureMapping mapping) {
             super(mapping);
@@ -692,7 +693,7 @@ public class BlockModelBuilder extends BlockModelGenerators {
         }
     }
 
-    public final class WoodProvider extends BlockModelGenerators.WoodProvider {
+    public class WoodProvider extends BlockModelGenerators.WoodProvider {
 
         public WoodProvider(TextureMapping logMapping) {
             super(logMapping);

@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog].
 
+## [v8.0.8-1.20.1] - 2023-10-01
+### Changed
+- Renamed extendable model generator classes
+
 ## [v8.0.7-1.20.1] - 2023-09-28
 ### Changed
 - `BlockModelGenerators` and `ItemModelGenerators` accesses now include access to fields
