@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog].
 
+## [v8.0.8-1.20.1] - 2024-01-24
+### Fixed
+- Update accesswidener to be transitive to fix reobfuscation issues
+
 ## [v8.0.7-1.20.1] - 2023-09-28
 ### Changed
 - `BlockModelGenerators` and `ItemModelGenerators` accesses now include access to fields
